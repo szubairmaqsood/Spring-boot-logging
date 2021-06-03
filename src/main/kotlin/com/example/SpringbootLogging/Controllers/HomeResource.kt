@@ -9,12 +9,19 @@ class HomeResource {
     /*
     By default configuration logback is present in our project
     We will make a logger object by using static method get logger of LoggerFactory and pass it name of current class
+    Level of logging
+    trace
+    debug
+    info
+    warn
+    error
+    Default level is info
      */
     val logger = LoggerFactory.getLogger(this.javaClass.name);
 
     @RequestMapping("/")
     fun home():String{
-        logger.error("Error happend");
+        logger.trace("Error happend");
         return "Hello from Spring boot";
     }
 }
